@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travego | Explore Freely</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background-color: #fff;
+    }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background-color: #e4572e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 16px;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      text-align: center;
+    }
+    .features div {
+      flex: 1 1 200px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 500px;
+      margin: auto;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Travego</h1>
+    <p>Explore Freely. Travel Adventurously.</p>
+    <button class="btn">Discover Tours</button>
+  </header>
+
+  <section class="section">
+    <h2>Top Destinations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?mountains" alt="Mountains" />
+        <div class="card-content">
+          <h3>Himalayan Escape</h3>
+          <p>Breathe in crisp air, trek rugged paths, and sleep under the stars.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?beach" alt="Beach" />
+        <div class="card-content">
+          <h3>Tropical Bliss</h3>
+          <p>Soak in sun and serenity on pristine, untouched shores.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?desert" alt="Desert" />
+        <div class="card-content">
+          <h3>Desert Adventure</h3>
+          <p>Dune bashing, camel rides, and magical sunsets await you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why Travel With Us</h2>
+    <div class="features">
+      <div>
+        <h3>✅ Expert Guides</h3>
+        <p>Local experts for deeper, authentic experiences.</p>
+      </div>
+      <div>
+        <h3>🎒 Customized Trips</h3>
+        <p>We plan around your interests, not ours.</p>
+      </div>
+      <div>
+        <h3>🌍 24/7 Support</h3>
+        <p>We're with you, wherever you go.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Destination" />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send Inquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Travego. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
