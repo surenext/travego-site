@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.holidaybazaar.co/sign-up by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Apr 2025 10:43:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <link rel="icon" type="image/png" href="../crmbeta.traviyo.in/CDN/Venkatesh_851/Images/HomePageSettings/638721976686053298_temp9f90.png" />
+    <link href="Content/css/variable.css" rel="stylesheet" />
+    <link href="Content/styles795d.css?v=WgkuHvbRL3Qkt20Kfpe5Ny2bsBn1TJ2fLbj9rI9kZ7w1" rel="stylesheet"/>
+
+    <script src="bundles/modernizr0cf5?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    <link href="Content/fontawesome/all.min.css" rel="stylesheet" />
+    <link href="Content/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="Content/css/owl.theme.default.css" rel="stylesheet" />
+    <link href="Content/css/jquery-ui-autocomplete.css" rel="stylesheet" />
+    <script src="bundles/jquerye770?v=N2YlHnRI7it2_JoqUZTYWxPtx-s61zIGkk78Q0eabPM1"></script>
+
+    <script src="Content/js/jquery.unobtrusive-ajax.js"></script>
+    <script src="Content/js/jquery.validate.mvc.js"></script>
+    <script src="Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="Content/js/jquery-ui.js"></script>
+    <meta http-equiv="keywords" name="keywords" />
+    <meta http-equiv="description" name="description" />
+ 
+
+</head>
+
+<body>
+    <style>
+    .alert-message {
+        line-height: 20px;
+        font-size: 15px;
+        padding-bottom: 12px;
+    }
+
+
+    .unstyled {
+        margin: 0;
+        list-style: none;
+    }
+
+        .unstyled a, .unstyled #test {
+            width: 120px;
+            text-decoration: none;
+            padding: .5em 1em;
+            background-color: #213347;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: .5em;
+            font-size: 15px;
+            font-weight: 300;
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+            .unstyled a:hover, .unstyled #test:hover {
+                background-color: #f25c5d;
+            }
+
+    .cf, .alert {
+        *zoom: 1;
+    }
+
+        .cf:before, .alert:before, .cf:after, .alert:after {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+
+        .cf:after, .alert:after {
+            clear: both;
+        }
+
+    #alerts {
+        width: 400px;
+        top: 12px;
+        right: 50px;
+        position: fixed;
+        z-index: 9999;
+        list-style: none;
+    }
+
+    .alert {
+        width: 100%;
+        margin-bottom: 8px;
+        display: block;
+        position: relative;
+        border-left: 4px solid;
+        right: -50px;
+        opacity: 0;
+        line-height: 1;
+        padding: 0;
+        transition: right 400ms, opacity 400ms, line-height 300ms 100ms, padding 300ms 100ms;
+        display: table;
+    }
+
+        .alert:hover {
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+    .open {
+        right: 0;
+        opacity: 1;
+        line-height: 2;
+        padding: 3px 15px;
+        transition: line-height 200ms, padding 200ms, right 350ms 200ms, opacity 350ms 200ms;
+    }
+
+    .alert-title {
+        font-weight: bold;
+    }
+
+    .alert-block {
+        width: 80%;
+        width: -webkit-calc(100% - 10px);
+        width: calc(100% - 10px);
+        text-align: left;
+    }
+
+        .alert-block em, .alert-block small {
+            font-size: .75em;
+            opacity: .75;
+            display: block;
+        }
+
+    .alert i {
+        font-size: 2em;
+        width: 1.5em;
+        max-height: 48px;
+        top: 50%;
+        margin-top: -12px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .alert-success {
+        color: #fff;
+        border-color: #539753;
+        background-color: #8fbf2f;
+    }
+
+    .alert-error {
+        color: #fff;
+        border-color: #dc4a4d;
+        background-color: #f25c5d;
+    }
+
+    .alert-trash {
+        color: #fff;
+        border-color: #dc4a4d;
+        background-color: #f25c5d;
+    }
+
+    .alert-info {
+        color: #fff;
+        border-color: #076d91;
+        background-color: #3397db;
+    }
+
+    .alert-warning {
+        color: #fff;
+        border-color: #dd6137;
+        background-color: #f7931d;
+    }
+</style>
+<script>
+        var Alert = undefined;
+
+        (function (Alert) {
+            var alert, error, trash, info, success, warning, _container;
+            info = function (message, title, options) {
+                return alert("info", message, title, "fa fa-info-circle", options);
+            };
+            warning = function (message, title, options) {
+                return alert("warning", message, title, "fa fa-warning", options);
+            };
+            error = function (message, title, options) {
+                return alert("error", message, title, "fa fa-exclamation-circle", options);
+            };
+
+            trash = function (message, title, options) {
+                return alert("trash", message, title, "fa fa-trash-o", options);
+            };
+
+            success = function (message, title, options) {
+                return alert("success", message, title, "fa fa-check-circle", options);
+            };
+            alert = function (type, message, title, icon, options) {
+                var alertElem, messageElem, titleElem, iconElem, innerElem, _container;
+                if (typeof options === "undefined") {
+                    options = {};
+                }
+                options = $.extend({}, Alert.defaults, options);
+                if (!_container) {
+                    _container = $("#alerts");
+                    if (_container.length === 0) {
+                        _container = $("<ul>").attr("id", "alerts").appendTo($("body"));
+                    }
+                }
+                if (options.width) {
+                    _container.css({
+                        width: options.width
+                    });
+                }
+                alertElem = $("<li>").addClass("alert").addClass("alert-" + type);
+                setTimeout(function () {
+                    alertElem.addClass('open');
+                }, 1);
+                if (icon) {
+                    iconElem = $("<i>").addClass(icon);
+                    alertElem.append(iconElem);
+                }
+                innerElem = $("<div>").addClass("alert-block");
+                //innerElem = $("<i>").addClass("fa fa-times");
+                alertElem.append(innerElem);
+                if (title) {
+                    titleElem = $("<div>").addClass("alert-title").append(title);
+                    innerElem.append(titleElem);
+
+                }
+                if (message) {
+                    messageElem = $("<div>").addClass("alert-message").append(message);
+                    //innerElem.append("<i class="fa fa-times"></i>");
+                    innerElem.append(messageElem);
+                    //innerElem.append("<em>Click to Dismiss</em>");
+                    //      innerElemc = $("<i>").addClass("fa fa-times");
+
+                }
+                if (options.displayDuration > 0) {
+                    setTimeout((function () {
+                        leave();
+                    }), options.displayDuration);
+                } else {
+                    innerElem.append("<em>Click to Dismiss</em>");
+                }
+                alertElem.on("click", function () {
+                    leave();
+                });
+
+                function leave() {
+                    alertElem.removeClass('open');
+                    alertElem.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                        return alertElem.remove();
+                    });
+                }
+                return _container.prepend(alertElem);
+            };
+            Alert.defaults = {
+                width: "",
+                icon: "",
+                displayDuration: 3000,
+                pos: ""
+            };
+            Alert.info = info;
+            Alert.warning = warning;
+            Alert.error = error;
+            Alert.trash = trash;
+            Alert.success = success;
+            return _container = void 0;
+
+        })(Alert || (Alert = {}));
+
+        this.Alert = Alert;
+
+        $('#test').on('click', function () {
+            Alert.info('Message');
+        });
+</script>
+
+
+
+
+<!-- //header large device start// -->
+<div id="topbar" class="style-elementor ">
+    <div class="topbar-left">
+        <ul class="st-list topbar-items">
+            <li class="topbar-item link normal"><a href="tel:8885513151" target="_self" class="upperText"> <i class="fa-solid fa-phone"></i>&nbsp;&nbsp;8885513151</a></li>
+            <li class="topbar-item link normal"><a href="mailto:admin@holidaybazaar.co" target="_blank" class="upperText"><i class="fa-regular fa-envelope"></i>&nbsp;&nbsp;admin@holidaybazaar.co</a></li>
+        </ul>
+    </div>
+    <div class="topbar-right d-none d-lg-flex">
+        <ul class="st-list topbar-items">
+
+
+            
+            <li class="topbar-item link social"><a href="https://www.facebook.com/holidaybazaarhyd" target="_blank" class="upperText"> <i class="fa-brands fa-facebook-f"></i></a></li>
+
+            <li class="topbar-item link social"><a href="https://www.instagram.com/holidaybazaarhyd/" target="_blank" style=" color: white;"><i class="fa-brands fa-instagram"></i></a></li>
+            
+
+            
+            <li class="topbar-item link social"><a href="https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview&amp;trk=login_reg_redirect" target="_blank" class="upperText"> <i class="fa-brands fa-linkedin"></i></a></li>
+
+
+            
+            <li class="topbar-item link social"><a href="https://www.youtube.com/@holidaybazaarhyd" target="_blank" class="upperText"> <i class="fa-brands fa-youtube"></i></a></li>
+            <li class="topbar-item link social"><a href="https://www.youtube.com/@holidaybazaarhyd" target="_blank" class="upperText"> <i class="fa-brands fa-x-twitter"></i></a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div class=" " id="header-large">
+    <nav class="navbar navbar-body navbar-expand-lg headerstyle-div " style="z-index: 999;">
+        <div class="container-fluid navbar-containers navbar-maindiv">
+            <div class="mob-menu">
+                <button class="navbar-toggler offcanva-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <svg class="vbp-header-menu-button__svg">
+                        <line x1="0" y1="50%" x2="100%" y2="50%" class="top" shape-rendering="crispEdges" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" class="middle" shape-rendering="crispEdges" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" class="bottom" shape-rendering="crispEdges" />
+                    </svg>
+                </button>
+                <a class="navbar-brand navbar-logo" href="index.html">
+                    <img src="../crmbeta.traviyo.in/CDN/Venkatesh_851/Images/ProfileSettings/638682225952972864_temp.jpg" alt="">
+                </a>
+
+                <div class=" d-flex d-md-none login-signmob">
+                    
+                        <div class="login-sign-section">
+                            <div class="dropdown ">
+                                <a class="dropdown-toggle login-sign-btn d-flex align-items-center loginformdata " href="login.html">
+                                    <i class="fa-solid fa-circle-user" style="margin-top : 1px;"></i> Login
+                                </a>
+                            </div>
+                        </div>
+
+
+                </div>
+
+            </div>
+            <div class="sitenavbar">
+                <div class="collapse navbar-collapse navbarheader " id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="myMenu">
+                            <li class="nav-item active">
+                                <a class="nav-link sitenavbar-items " href="index.html">
+                                    <i class="fa-solid fa-umbrella-beach icons"></i>
+                                    Holidays
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class="nav-link sitenavbar-items " href="flight/Index.html"><i class="fa fa-plane icons"></i> Flights</a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class="nav-link sitenavbar-items" href="hotels.html">
+                                    <i class="fa fa-hotel icons"></i>
+                                    Hotels
+                                </a>
+                            </li>
+                                                    <div class="dropdown">
+                                <a class="nav-link sitenavbar-items dropdown-toggle" href="Error/Index.html" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-flag icons"></i> Destinations
+                                </a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li><a class="dropdown-item" href="domesticdestinations.html">Domestic</a></li>
+                                    <li><a class="dropdown-item" href="internationaldestination.html">International</a></li>
+                                </ul>
+                            </div>
+                                                                            <li class="nav-item">
+                                <a class="nav-link sitenavbar-items" href="cruise/Index.html">
+                                    <i class="fa-solid fa-ship icons"></i>
+                                    Cruise
+                                </a>
+                            </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class=" d-none d-md-flex">
+                    <div class="login-sign-section">
+                        <div class="dropdown ">
+                            <a class="dropdown-toggle login-sign-btn d-flex align-items-center loginformdata" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-circle-user fs-6 me-2"></i> Sign In / Register</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item " href="login.html"><i class="fa fa-user icons"></i> Login</a></li>
+                                <li><a class="dropdown-item " href="sign-up.html"><i class="fa fa-user icons"></i> Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <img src="Content/images/icons/menu.png" class="offcanva-menu d-none d-lg-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- //offcanvs start// -->
+<div class="offer-header-section" id="canvas-header">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body off-header-body">
+            <div class="othr-service">
+                <h5 class="heading-other-service">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    Important Links
+                </h5>
+            </div>
+            <div class="other-service-list">
+                    <a class="nav-link sitenavbar-items d-block d-lg-none" href="index.html">
+                        <i class="fa-solid fa-umbrella-beach icons"></i>
+                        Holidays
+                    </a>
+                                    <a class="nav-link sitenavbar-items d-block d-lg-none" href="flight/Index.html"><i class="fa fa-plane icons"></i> Flights</a>
+                                    <a class="nav-link sitenavbar-items d-block d-lg-none" href="hotels.html">
+                        <i class="fa fa-hotel icons"></i>
+                        Hotels
+                    </a>
+                                    <a class="nav-link sitenavbar-items d-block d-lg-none" href="activity-search.html">
+                        <i class="fa-sharp fa-solid fa-parachute-box icons"></i>
+                        Activity
+                    </a>
+                                    <li class="nav-item d-block d-lg-none">
+                        <a class="nav-link sitenavbar-items d-block d-lg-none" href="Transfer/Index.html">
+                            <i class="fa fa-car icons"></i>
+                            Transfers
+                        </a>
+                    </li>
+
+
+                    <div class="dropdown d-block d-lg-none">
+                        <a class="nav-link sitenavbar-items dropdown-toggle" href="Error/Index.html" data-bs-toggle="dropdown" aria-expanded="false" style="color:#fff !important;">
+                            <i class="fa fa-flag icons"></i> Destinations
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" href="domesticdestinations.html">Domestic Destinations</a></li>
+                            <li><a class="dropdown-item" href="internationaldestination.html">International Destinations</a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <a class="nav-link sitenavbar-items d-block d-lg-none" href="cruise/Index.html">
+                        <i class="fa-solid fa-ship icons"></i>
+                        Cruise
+                    </a>
+                                    <a class="nav-link sitenavbar-items d-block d-lg-none d-md-none" href="visa.html">
+                        <i class="fa-regular fa-credit-card icons"></i>
+                        Visa
+                    </a>
+
+               
+
+                <a class="nav-link sitenavbar-items" href="blogs.html">
+                    <i class="fa-solid fa-blog"></i>
+                    Blogs
+                </a>
+                        <a class="nav-link sitenavbar-items d-none" href="Error/Index.html">
+                            <i class=""></i>
+                            
+                            Destination Wedding
+                        </a>
+
+                <a class="nav-link sitenavbar-items" href="about-us.html">
+                    <i class="fa-solid fa-address-card icons"></i>
+                    About Us
+                </a>
+                <a class="nav-link sitenavbar-items" href="contact-us.html">
+                    <i class="fa fa-headset icons"></i>
+                    Contact Us
+                </a>
+                <a class="nav-link sitenavbar-items d-block d-lg" href="activity-search.html">
+                    <i class="fa-sharp fa-solid fa-parachute-box icons"></i>
+                    Activity
+                </a>
+                <a class="nav-link sitenavbar-items" href="Transfer/Index.html">
+                    <i class="fa fa-car icons"></i>
+                    Transfers
+                </a>
+                <a class="nav-link sitenavbar-items d-block d-lg" href="forum/wedding.html">
+                    <i class="fas fa-gem"></i>
+                    Destination Wedding
+                </a>
+                <a class="nav-link sitenavbar-items d-block d-lg" href="packages-list6b80.html?ThemeName=Fix%20Departure">
+
+                    <i class="fas fa-plane"></i>
+                    Fix Departure
+                </a>
+            </div>
+            <div class="other-service-box mt-4">
+                <div class="list">
+                    <div class="social-icons">
+<i onclick="window.open('https://www.facebook.com/holidaybazaarhyd','_blank')" class="fab fa-facebook icons"></i>                        <i onclick="window.open('https://www.instagram.com/holidaybazaarhyd/', '_blank')" class="fab fa-instagram icons"></i>                        <i onclick="window.open('https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview&amp;trk=login_reg_redirect', '_blank')" class="fab fa-linkedin icons"></i>                        <i onclick="window.open('https://www.youtube.com/@holidaybazaarhyd', '_blank')" class="fab fa-google icons"></i>                        <i onclick="window.open('https://www.youtube.com/@holidaybazaarhyd', '_blank')" class="fab fa-x-twitter icons"></i>                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //off canvas end// -->
+<!-- //header large device end// -->
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog querpopbox">
+        <div class="modal-content">
+            <button type="button" class="btn-close enquiryfrm-content-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body querypop-page-start">
+                <div class="enquiry-pop">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6  d-none d-sm-block">
+                            <div class="pop-left-body">
+                                <div class="pop-con text-center">
+                                    <h4>How It Works </h4>
+                                </div>
+                                <div class="pop-left-data">
+                                    <ul>
+                                        <li>
+                                            <span class="number">1.</span>
+                                            <span>
+                                                Tell us details of your holiday plan.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="number">2.</span>
+                                            <span>
+                                                Get multiple quotes from expert agents, compare &amp; customize
+                                                further.
+
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="number">3.</span>
+                                            <span>
+                                                Select &amp; book best deal.
+
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/lowestprice.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Lowest Price
+                                                        <br>Guarantee
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image ">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/securedprice.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Fast Secured Bookings
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/supportteam.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        24 * 7 Support
+
+
+                                                    </h5>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image ">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/bestoofer.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Enjoy Exciting Deals
+
+
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="frthr-details text-center">
+                                    <p><i class="fa fa-phone"></i> Call us for details</p>
+                                    <a href="tel:8885513151"> 8885513151</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+
+                            <div class="pop-right-body">
+                                <div class="pop-main-img text-center">
+                                    <img src="Content/images/Destination/service/howit.html" alt="">
+                                </div>
+                                <div class="pop-con text-center">
+                                    <h4>
+                                        Enquiry Now
+                                    </h4>
+                                </div>
+                                <script type="text/javascript" src="../www.google.com/recaptcha/api85f1.js?onload=onloadCallback&amp;render=explicit" asyncdefer></script>
+
+                                <div class="qry-frm mt-3">
+<form action="https://www.holidaybazaar.co/enquiry/homequery" data-ajax="true" data-ajax-failure="OnSubmitFailure" data-ajax-method="POST" data-ajax-success="OnSubmitSuccess" id="form1" method="post">                                        <div class="form-group  formiconsinclu">
+                                            
+                                            <input type="text" class="form-control frminput" name="FirstName" placeholder="Full Name" required>
+                                            <span class="inconscontact-settleone-fromenquiry"><i class="fa fa-address-book iconsdivfontemail"></i></span>
+                                        </div>
+                                        <div class="form-group formiconsinclu">
+                                            
+                                            <input type="email" class="form-control frminput" name="Email" placeholder="Email Id" required>
+                                            <span class="inconscontact-settleone-fromenquiry"><i class="fa fa-envelope iconsdivfontemail"></i></span>
+                                        </div>
+                                        <div class="form-group formiconsinclu">
+                                            
+                                            <input type="number" class="form-control frminput" name="Mobile" placeholder="Mobile No." required>
+                                            <span class="inconscontact-settleone-fromenquiry"><i class="fa fa-phone iconsdivfontemail"></i></span>
+                                        </div>
+                                        <div class="form-group formiconsinclu">
+                                            
+                                            <textarea class="form-control frminput" name="Remarks" id="exampleFormControlTextarea1" placeholder="Ask Your Travel Consultant A Question" style=" height: initial !important;" rows="3" required></textarea>
+                                            <span class="inconscontact-settleone-fromenquiry" style=" top: 7px !important;"><i class="fa fa-comment iconsdivfontemail"></i></span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                            <div class="form-group">
+                                                <div id="dvCaptcha">
+                                                </div>
+                                                <input type="hidden" id="hfCaptcha" name="CaptchaaData" />
+                                                <span id="rfvCaptcha" class="error" style="display:none">Captcha validation is required.</span>
+                                                <br />
+                                            </div>
+                                        </div>
+                                        <div style="display:none;">
+                                            <input type="text" name="Field1" />
+
+                                        </div>
+                                        <div class=" mt-3">
+                                            <button type="submit" id="submitBtn" class="btn w-100 card-btn-modldiv">Submit</button>
+                                        </div>
+</form>                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var goTopButton = document.getElementById('gotop');
+
+        // Show the button when user scrolls down
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                goTopButton.style.display = 'block';
+            } else {
+                goTopButton.style.display = 'none';
+            }
+        });
+
+        // Scroll to top when button is clicked
+        goTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Optional, smooth scrolling animation
+            });
+        });
+    });
+      var onloadCallback = function () {
+            grecaptcha.render('dvCaptcha', {
+                'sitekey': '6Levj6oqAAAAAG_oItvjtaD8eMq04KeeW_N2i-_C',
+                'callback': function (response) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Base/Captcha",
+                        data: "{response: '" + response + "'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (r) {
+                            var captchaResponse = jQuery.parseJSON(r.Response);
+                            if (captchaResponse.success) {
+                                $("#hfCaptcha").val(captchaResponse.success);
+                                $("#rfvCaptcha").hide();
+                            } else {
+                                $("#hfCaptcha").val("");
+                                $("#rfvCaptcha").show();
+                                var error = captchaResponse["error-codes"][0];
+                                $("#rfvCaptcha").html("RECaptcha error. " + error);
+                            }
+                        }
+                    });
+                }
+            });
+    };
+
+
+
+    document.getElementById('submitBtn').addEventListener('click', function (event) {
+        var captchaFilled = document.getElementById('hfCaptcha').value.trim();
+        if (!captchaFilled) {
+            event.preventDefault();
+            alert("Please complete the CAPTCHA before submitting.");
+            document.getElementById('rfvCaptcha').style.display = 'block';
+        }
+    });
+</script>
+<div id="gotop" title="Go to top" style="display: block;">
+    <i class="fa-solid fa-arrow-up"></i>
+</div>
+
+
+<div class="whatsapp-button">
+    <a data-bs-toggle="modal" data-bs-target="#writetestimonial">
+        <div class="rs_whatsapp_icon"><i class="fa fa-comment" style="color: #fff;"></i></div>
+
+    </a>
+</div>
+<div class="whatsapp-button-div">
+    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="rs_whatsapp_icon"><i class="fa fa-headset" style="color: #fff;"></i></div>
+
+    </a>
+</div>
+
+
+<div class="modal fade" id="writetestimonial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog querpopbox">
+        <div class="modal-content">
+            <button type="button" class="btn-close enquiryfrm-content-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+            <div class="modal-body querypop-page-start feedbackdivelist-dat">
+
+
+
+                <div class="">
+                    <div class="row p-0">
+                        <div class="col-lg-6 col-sm-12 col-md-6  d-none d-sm-block">
+                            <div class="pop-left-body">
+                                <div class="pop-con text-center">
+                                    <h4>How It Works </h4>
+                                </div>
+                                <div class="pop-left-data">
+                                    <ul>
+                                        <li>
+                                            <span class="number">1.</span>
+                                            <span>
+                                                Tell us details of your holiday plan.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="number">2.</span>
+                                            <span>
+                                                Get multiple quotes from expert agents, compare &amp; customize
+                                                further.
+
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="number">3.</span>
+                                            <span>
+                                                Select &amp; book best deal.
+
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/lowestprice.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Lowest Price
+                                                        <br>Guarantee
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image ">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/securedprice.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Fast Secured Bookings
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/supportteam.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        24 * 7 Support
+
+
+                                                    </h5>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-md-6">
+                                            <div class="pop-list-image ">
+                                                <div class="">
+                                                    <img src="Content/images/Destination/service/bestoofer.html" alt="">
+                                                </div>
+                                                <div>
+                                                    <h5>
+                                                        Enjoy Exciting Deals
+
+
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="frthr-details text-center">
+                                    <p><i class="fa fa-phone"></i> Call us for details</p>
+                                    <a href="tel:8885513151"> 8885513151</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 p-xl-3">
+                            <h3 class="mt-3">Write Your Feedback</h3>
+                            <div class="row">
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group ">
+
+                                        <input type="file" name="FileUpload1" id="ContentPlaceHolder1_FileUpload1" class="form-control wrapper_texti_inpt imageupload" onchange="getNewImage()">
+                                        <input type="hidden" id="testImagePath">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group  formiconsinclu">
+
+                                        <input name="ctl00$ContentPlaceHolder1$tstmnlEmail" type="email" id="ContentPlaceHolder1_tstmnlEmail" class="form-control wrapper_texti_inpt frminputfeedback" placeholder=" Email">
+                                        <span class="inconscontact-settleone-fromfeedback"><i class="fa fa-envelope iconsdivfontemail"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group formiconsinclu ">
+
+
+                                        <input name="ctl00$ContentPlaceHolder1$txtYourName" type="text" maxlength="50" id="ContentPlaceHolder1_txtYourName" class="form-control frminputfeedback wrapper_texti_inpt " placeholder=" Name">
+                                        <span class="inconscontact-settleone-fromfeedback"><i class="fa fa-address-book iconsdivfontemail"></i></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-12">
+
+
+                                    <div class="form-group formiconsinclu">
+
+                                        <input name="ctl00$ContentPlaceHolder1$tstmnlMobile" type="text" maxlength="20" id="ContentPlaceHolder1_tstmnlMobile" minlength="10" class="form-control frminputfeedback frminputfeedback wrapper_texti_inpt" placeholder="Mobile No.">
+                                        <span class="inconscontact-settleone-fromfeedback"><i class="fa fa-phone iconsdivfontemail"></i></span>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-lg-12 col-sm-12 col-xs-12 col-12">
+                                    <div class="form-group formiconsinclu">
+
+                                        <textarea name="ctl00$ContentPlaceHolder1$txttestimonial" rows="4" cols="20" id="ContentPlaceHolder1_txttestimonial" class="form-control  frminputfeedback wrapper_texti_inpt autoresize-textarea comment-textarea" placeholder="Your Review"></textarea>
+                                        <span class="inconscontact-settleone-fromenquiry" style=" top: 7px !important;"><i class="fa fa-comment iconsdivfontemail"></i></span>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-lg-12 col-sm-12 col-xs-12 col-12">
+                                    <div class="form-group ">
+
+
+
+                                        <div class="feedback">
+
+                                            <div class="rating ">
+                                                <input type="radio" name="rating" id="rating-5" checked="">
+                                                <label for="rating-5"></label>
+                                                <input type="radio" name="rating" id="rating-4">
+                                                <label for="rating-4"></label>
+                                                <input type="radio" name="rating" id="rating-3">
+                                                <label for="rating-3"></label>
+                                                <input type="radio" name="rating" id="rating-2">
+                                                <label for="rating-2"></label>
+                                                <input type="radio" name="rating" id="rating-1">
+                                                <label for="rating-1"></label>
+                                                <div class="emoji-wrapper">
+                                                    <div class="emoji">
+                                                        <svg class="rating-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <circle cx="256" cy="256" r="256" fill="#ffd93b"></circle>
+                                                            <path d="M512 256c0 141.44-114.64 256-256 256-80.48 0-152.32-37.12-199.28-95.28 43.92 35.52 99.84 56.72 160.72 56.72 141.36 0 256-114.56 256-256 0-60.88-21.2-116.8-56.72-160.72C474.8 103.68 512 175.52 512 256z" fill="#f4c534"></path>
+                                                            <ellipse transform="scale(-1) rotate(31.21 715.433 -595.455)" cx="166.318" cy="199.829" rx="56.146" ry="56.13" fill="#fff"></ellipse>
+                                                            <ellipse transform="rotate(-148.804 180.87 175.82)" cx="180.871" cy="175.822" rx="28.048" ry="28.08" fill="#3e4347"></ellipse>
+                                                            <ellipse transform="rotate(-113.778 194.434 165.995)" cx="194.433" cy="165.993" rx="8.016" ry="5.296" fill="#5a5f63"></ellipse>
+                                                            <ellipse transform="scale(-1) rotate(31.21 715.397 -1237.664)" cx="345.695" cy="199.819" rx="56.146" ry="56.13" fill="#fff"></ellipse>
+                                                            <ellipse transform="rotate(-148.804 360.25 175.837)" cx="360.252" cy="175.84" rx="28.048" ry="28.08" fill="#3e4347"></ellipse>
+                                                            <ellipse transform="scale(-1) rotate(66.227 254.508 -573.138)" cx="373.794" cy="165.987" rx="8.016" ry="5.296" fill="#5a5f63"></ellipse>
+                                                            <path d="M370.56 344.4c0 7.696-6.224 13.92-13.92 13.92H155.36c-7.616 0-13.92-6.224-13.92-13.92s6.304-13.92 13.92-13.92h201.296c7.696.016 13.904 6.224 13.904 13.92z" fill="#3e4347"></path>
+                                                        </svg>
+                                                        <svg class="rating-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <circle cx="256" cy="256" r="256" fill="#ffd93b"></circle>
+                                                            <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"></path>
+                                                            <path d="M328.4 428a92.8 92.8 0 0 0-145-.1 6.8 6.8 0 0 1-12-5.8 86.6 86.6 0 0 1 84.5-69 86.6 86.6 0 0 1 84.7 69.8c1.3 6.9-7.7 10.6-12.2 5.1z" fill="#3e4347"></path>
+                                                            <path d="M269.2 222.3c5.3 62.8 52 113.9 104.8 113.9 52.3 0 90.8-51.1 85.6-113.9-2-25-10.8-47.9-23.7-66.7-4.1-6.1-12.2-8-18.5-4.2a111.8 111.8 0 0 1-60.1 16.2c-22.8 0-42.1-5.6-57.8-14.8-6.8-4-15.4-1.5-18.9 5.4-9 18.2-13.2 40.3-11.4 64.1z" fill="#f4c534"></path>
+                                                            <path d="M357 189.5c25.8 0 47-7.1 63.7-18.7 10 14.6 17 32.1 18.7 51.6 4 49.6-26.1 89.7-67.5 89.7-41.6 0-78.4-40.1-82.5-89.7A95 95 0 0 1 298 174c16 9.7 35.6 15.5 59 15.5z" fill="#fff"></path>
+                                                            <path d="M396.2 246.1a38.5 38.5 0 0 1-38.7 38.6 38.5 38.5 0 0 1-38.6-38.6 38.6 38.6 0 1 1 77.3 0z" fill="#3e4347"></path>
+                                                            <path d="M380.4 241.1c-3.2 3.2-9.9 1.7-14.9-3.2-4.8-4.8-6.2-11.5-3-14.7 3.3-3.4 10-2 14.9 2.9 4.9 5 6.4 11.7 3 15z" fill="#fff"></path>
+                                                            <path d="M242.8 222.3c-5.3 62.8-52 113.9-104.8 113.9-52.3 0-90.8-51.1-85.6-113.9 2-25 10.8-47.9 23.7-66.7 4.1-6.1 12.2-8 18.5-4.2 16.2 10.1 36.2 16.2 60.1 16.2 22.8 0 42.1-5.6 57.8-14.8 6.8-4 15.4-1.5 18.9 5.4 9 18.2 13.2 40.3 11.4 64.1z" fill="#f4c534"></path>
+                                                            <path d="M155 189.5c-25.8 0-47-7.1-63.7-18.7-10 14.6-17 32.1-18.7 51.6-4 49.6 26.1 89.7 67.5 89.7 41.6 0 78.4-40.1 82.5-89.7A95 95 0 0 0 214 174c-16 9.7-35.6 15.5-59 15.5z" fill="#fff"></path>
+                                                            <path d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z" fill="#3e4347"></path>
+                                                            <path d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z" fill="#fff"></path>
+                                                        </svg>
+                                                        <svg class="rating-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <circle cx="256" cy="256" r="256" fill="#ffd93b"></circle>
+                                                            <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"></path>
+                                                            <path d="M336.6 403.2c-6.5 8-16 10-25.5 5.2a117.6 117.6 0 0 0-110.2 0c-9.4 4.9-19 3.3-25.6-4.6-6.5-7.7-4.7-21.1 8.4-28 45.1-24 99.5-24 144.6 0 13 7 14.8 19.7 8.3 27.4z" fill="#3e4347"></path>
+                                                            <path d="M276.6 244.3a79.3 79.3 0 1 1 158.8 0 79.5 79.5 0 1 1-158.8 0z" fill="#fff"></path>
+                                                            <circle cx="340" cy="260.4" r="36.2" fill="#3e4347"></circle>
+                                                            <g fill="#fff">
+                                                                <ellipse transform="rotate(-135 326.4 246.6)" cx="326.4" cy="246.6" rx="6.5" ry="10"></ellipse>
+                                                                <path d="M231.9 244.3a79.3 79.3 0 1 0-158.8 0 79.5 79.5 0 1 0 158.8 0z"></path>
+                                                            </g>
+                                                            <circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347"></circle>
+                                                            <ellipse transform="rotate(-135 182.1 246.7)" cx="182.1" cy="246.7" rx="10" ry="6.5" fill="#fff"></ellipse>
+                                                        </svg>
+                                                        <svg class="rating-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <circle cx="256" cy="256" r="256" fill="#ffd93b"></circle>
+                                                            <path d="M407.7 352.8a163.9 163.9 0 0 1-303.5 0c-2.3-5.5 1.5-12 7.5-13.2a780.8 780.8 0 0 1 288.4 0c6 1.2 9.9 7.7 7.6 13.2z" fill="#3e4347"></path>
+                                                            <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"></path>
+                                                            <g fill="#fff">
+                                                                <path d="M115.3 339c18.2 29.6 75.1 32.8 143.1 32.8 67.1 0 124.2-3.2 143.2-31.6l-1.5-.6a780.6 780.6 0 0 0-284.8-.6z"></path>
+                                                                <ellipse cx="356.4" cy="205.3" rx="81.1" ry="81"></ellipse>
+                                                            </g>
+                                                            <ellipse cx="356.4" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347"></ellipse>
+                                                            <g fill="#fff">
+                                                                <ellipse transform="scale(-1) rotate(45 454 -906)" cx="375.3" cy="188.1" rx="12" ry="8.1"></ellipse>
+                                                                <ellipse cx="155.6" cy="205.3" rx="81.1" ry="81"></ellipse>
+                                                            </g>
+                                                            <ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347"></ellipse>
+                                                            <ellipse transform="scale(-1) rotate(45 454 -421.3)" cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff"></ellipse>
+                                                        </svg>
+                                                        <svg class="rating-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <circle cx="256" cy="256" r="256" fill="#ffd93b"></circle>
+                                                            <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"></path>
+                                                            <path d="M232.3 201.3c0 49.2-74.3 94.2-74.3 94.2s-74.4-45-74.4-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b"></path>
+                                                            <path d="M96.1 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2C80.2 229.8 95.6 175.2 96 173.3z" fill="#d03f3f"></path>
+                                                            <path d="M215.2 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff"></path>
+                                                            <path d="M428.4 201.3c0 49.2-74.4 94.2-74.4 94.2s-74.3-45-74.3-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b"></path>
+                                                            <path d="M292.2 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2-77.8-65.7-62.4-120.3-61.9-122.2z" fill="#d03f3f"></path>
+                                                            <path d="M411.3 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff"></path>
+                                                            <path d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z" fill="#3e4347"></path>
+                                                            <path d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z" fill="#e24b4b"></path>
+                                                        </svg>
+                                                        <svg class="rating-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <g fill="#ffd93b">
+                                                                <circle cx="256" cy="256" r="256"></circle>
+                                                                <path d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z"></path>
+                                                            </g>
+                                                            <path d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z" fill="#e9eff4"></path>
+                                                            <path d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#45cbea"></path>
+                                                            <path d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#e84d88"></path>
+                                                            <g fill="#38c0dc">
+                                                                <path d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z"></path>
+                                                            </g>
+                                                            <g fill="#d23f77">
+                                                                <path d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z"></path>
+                                                            </g>
+                                                            <path d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z" fill="#3e4347"></path>
+                                                            <path d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z" fill="#e24b4b"></path>
+                                                            <path d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z" fill="#fff" opacity=".2"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-sm-12 col-xs-12 col-12 mt-2">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-dark  w-100 newsletter-btn-div " onclick="CheckValidationForTestimonial()">Submit <img src="../cdn-icons-png.flaticon.com/128/6797/6797554.png" class="newsltter-trend-img" style="border-radius : 10px;"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function OnSubmitSuccess(data) {
+        if (data.IsSuccess == false) {
+            Alert.success(data.Message, 'We have received your details, our team will connect with you shortly !!', { displayDuration: 10000 });
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000); // 3000 milliseconds = 3 seconds
+        } else {
+            Alert.success("We have received your details, our team will connect with you shortly !! ", '', { displayDuration: 10000 });
+            $("#exampleModal").modal('hide');
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+    }
+
+    function OnSubmitFailure(data) {
+        Alert.error(data, 'Error', { displayDuration: 10000 });
+    }
+</script>
+
+<script>
+    function getNewImage() {
+        var data = new FormData();
+        var files = $("#ContentPlaceHolder1_FileUpload1").get(0).files;
+        if (files.length > 0) {
+            data.append("MyImages", files[0]);
+        }
+        var thisInp = $(this);
+        $.ajax({
+            url: "/Home/UploadFile",
+            type: "POST",
+            data: data,
+            contentType: false,
+            processData: false,
+            success: function (result) {
+                var reslt = result;
+                $("#testImagePath").val(reslt);
+                //window.location.reload();
+            },
+            error: function (err) {
+                alert(err)
+            }
+        });
+
+
+    }
+
+
+    function CheckValidationForTestimonial() {
+        var ratingId = $("input[name='rating']:checked").attr("id");
+        var rrr = parseInt(ratingId.replace(/\D/g, ''), 10);
+        $.ajax({
+            url: "/Home/SaveTestimonial",
+            type: "POST",
+            data: {
+                name: $("#ContentPlaceHolder1_txtYourName").val(), image: $("#testImagePath").val(), email: $("#ContentPlaceHolder1_tstmnlEmail").val(),
+                phnno: $("#ContentPlaceHolder1_tstmnlMobile").val(),
+                testimonial: $("#ContentPlaceHolder1_txttestimonial").val(),
+                rating: rrr
+            },
+
+            success: function (result) {
+                if (result.IsSuccess) {
+                    $("#writetestimonial").modal('hide');
+                } else {
+                }
+
+            },
+            error: function (err) {
+                alert(err)
+            }
+        });
+    }
+</script>
+
+
+
+<style>
+    @media(max-width : 768px) {
+        .feedbackdivelist-dat {
+            padding: 17px !important;
+        }
+    }
+
+    .autodataincom-divv {
+        text-decoration: none !important;
+    }
+
+    nav.headerfixed.headerstyle-div.navbar.navbar-body.navbar-expand-lg {
+        margin-top: 0px !important;
+        top: 0px;
+    }
+    /*.ui-menu .ui-menu-item-wrapper.ui-state-active {
+        background-color: var(--primary-color);*/ /* Yellow background */
+    /*color: #333;*/ /* Black text color */
+    /*width : 100% !important;
+    }
+    .ui-menu-item-wrapper {
+        background-color: #ffcc00;*/ /* Yellow background */
+    /*color: #333;*/ /* Black text color */
+    /*width: 100% !important;
+    }*/
+    .headerfixed {
+        transition: 0.3s;
+    }
+
+    .style-elementor {
+        transition: 0.5s;
+    }
+</style>
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1) {
+            $('.headerstyle-div').addClass('headerfixed ');
+        } else {
+            $('.headerstyle-div').removeClass('headerfixed ');
+        }
+    });
+</script>
+
+
+    
+
+<link href="Content/css/Login/style.css" rel="stylesheet" />
+<section class="login-sec" style="background-image : url('')">
+    <div class="index-login">
+        <div class="main-box">
+            <div class="top-tab-logo">
+                <div class="tab-here">
+                    <button class="tabActivity brd-radius1" onclick="openCity(event, 'Login-box')">Login</button>
+                    <button class="tabActivity login-active brd-radius2" onclick="openCity(event, 'signup-box')">Sign-up</button>
+                </div>
+            </div>
+            <div class="parent-tab-box">
+                <div id="Login-box" class="tabBehaviour child-box" style="display:none;">
+                    <div class="row p-0 m-1 column-reverse-mob">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-5 bg-white ">
+                            <div class="heading-here">
+                                <h1 class="main-heading"></h1>
+                                <p class="short-desription"></p>
+                                <span class="bottom-tap"></span>
+                            </div>
+                            <div class="login-form">
+    <div class="input-field">
+        <span class="login-icons"><i class="fa fa-envelope"></i></span>
+        <input autocomplete="off" type="email" placeholder="Email" id="username" class="form-input" required>
+    </div>
+    <div class="input-field">
+        <span class="login-icons"><i class="fa fa-key"></i></span>
+        <input autocomplete="off" type="password" class="form-input passinpt" id="passinpt"
+               placeholder="Password" required autocomplete="false">
+    </div>
+    <span class="showpassword">
+        <input autocomplete="off" type="checkbox" onclick="showpass()">Show
+        Password
+    </span>
+
+    <div class="forgetpas">
+        <a href="forgot-password.html">Forget Your Password?</a>
+    </div>
+    <div class="input-field">
+        <button class="btn-submit" type="button" onclick="checkLogin()"> Submit</button>
+    </div>
+</div>
+<script>
+    function checkLogin() {
+        $.ajax({
+            type: "POST",
+            url: "/Login/CustomerLogin",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: '{"UserName":"' + $("#username").val() + '", "Password":"' + $("#passinpt").val() + '" }',
+            success: function (data) {
+                if (data.IsSuccess == false) {
+                    Alert.error(data.Message, 'Error', { displayDuration: 3000 });
+                } else {
+                    window.location.href = 'home.html';
+                }
+            },
+            error: function (data) { alert('Error'); }
+        });
+    }
+</script>
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0 ">
+                            <div class="login-slider-div">
+                                <div class="crd-voucher d-none d-sm-block">
+                                    <h1><span>Live</span> <br> Your <br> <span>Dream</span> <br> Now</h1>
+                                    <p>Never Stop Exploring</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="signup-box" class="tabBehaviour child-box" style="display:block">
+                    <style>
+    .maindivformsign {
+        padding: 12px;
+    }
+</style>
+
+<script type="text/javascript" src="../www.google.com/recaptcha/api85f1.js?onload=onloadCallback&amp;render=explicit" asyncdefer></script>
+<form action="https://www.holidaybazaar.co/login/customersignup" data-ajax="true" data-ajax-failure="SignUpFailure" data-ajax-method="POST" data-ajax-success="SignUpSuccess" id="form0" method="post">    <div class="row bg-white rounded maindivformsign m-1" style="    box-shadow: 0px 0px 10px -1px rgba(255,255,255,.8);">
+        <div class="heading-here">
+            <h1 class="main-heading"></h1>
+            <p class="short-desription"></p>
+            <span class="bottom-tap"></span>
+        </div>
+
+
+        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 col-12 ">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-user"></i></span>
+                <input autocomplete="off" type="text" class="form-input " name="FirstName" placeholder="First Name" required>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 col-12">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-user"></i></span>
+                <input autocomplete="off" type="text" class="form-input " name="LastName" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 col-12">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-envelope"></i></span>
+                <input autocomplete="off" type="email" class="form-input" name="Username" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 col-12">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-phone" style="    transform: rotate(90deg);"></i></span>
+                <input autocomplete="off" type="tel" class="form-input " name="Mobile" maxlength="10" placeholder="Mobile No."
+                       required>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-key"></i></span>
+                <input autocomplete="off" type="password" class="form-input" name="Password" placeholder="Password" required>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
+            <div class="input-field">
+                <span class="login-icons"><i class="fa fa-key"></i></span>
+                <input autocomplete="off" type="password" class="form-input" name="ConfirmPassword" placeholder="Confirm Password"
+                       required>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+            <div class="form-group">
+                <div id="dvCaptcha">
+                </div>
+                <input type="hidden" id="hfCaptcha" />
+                <span id="rfvCaptcha" class="error" style="display:none">Captcha validation is required.</span>
+                <br />
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+            <div class="input-field">
+                <button class="btn-submit" type="submit"> Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    function SignUpSuccess(data) {
+        if (data.IsSuccess == false) {
+            Alert.error(data.Message, 'Error', { displayDuration: 3000 });
+        } else {
+            window.location.href = 'login.html';
+        }
+    }
+    function SignUpFailure(data) {
+        Alert.error(data, 'Error', { displayDuration: 3000 });
+    }
+    var onloadCallback = function () {
+            grecaptcha.render('dvCaptcha', {
+                'sitekey': '6Levj6oqAAAAAG_oItvjtaD8eMq04KeeW_N2i-_C',
+                'callback': function (response) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Base/Captcha",
+                        data: "{response: '" + response + "'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (r) {
+                            var captchaResponse = jQuery.parseJSON(r.Response);
+                            if (captchaResponse.success) {
+                                $("#hfCaptcha").val(captchaResponse.success);
+                                $("#rfvCaptcha").hide();
+                            } else {
+                                $("#hfCaptcha").val("");
+                                $("#rfvCaptcha").show();
+                                var error = captchaResponse["error-codes"][0];
+                                $("#rfvCaptcha").html("RECaptcha error. " + error);
+                            }
+                        }
+                    });
+                }
+            });
+        };
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="Content/css/Login/script.js"></script>
+
+    
+
+<div class="py-5 container newsletter-section-style">
+    <div class="shape" style="background-image: url(Content/images/shapesubscribes.png);"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <h4 class="text-light lh-base m-0 newsletterfont">Subscribe Our Newsletter To Stay Updated With Our Latest Offers !!</h4>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="newsletter-forms mt-md-0 mt-4">
+<form action="https://www.holidaybazaar.co/home/newslettersubscription" data-ajax="true" data-ajax-failure="SignUpFailure" data-ajax-method="POST" data-ajax-success="SignUpSuccess" id="form2" method="post"><input name="__RequestVerificationToken" type="hidden" value="RMFs86n3QMJ1BqRae8kaLTROdFiwm976sJF7cwQIvYhfucTDQn9i1n2GimoAPhw_pP8DwEtR1rX8w91kmXfr4nu6moN603HeSPYInRig8bA1" />                        <div class="row align-items-center justify-content-between bg-white rounded-3 p-2 gx-0">
+                            <input type="hidden" name="Field1">
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-6">
+                                <div class="form-group m-0">
+                                    <input type="email" name="Email" id="news-letteremail" class="form-control bold ps-1 border-0" placeholder="Enter Your Mail!" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-6">
+                                <div class="form-group m-0">
+                                    <button type="submit" class="btn btn-dark  w-100 ">Submit<i class="fa-solid fa-arrow-trend-up ms-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+</form>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function SignUpSuccess(data) {
+        if (data.IsSuccess == false) {
+            Alert.error(data.Message, 'Error', { displayDuration: 3000 });
+        } else {
+            Alert.success("Thank you for subscribing to us !! ", '', { displayDuration: 3000 });
+            document.getElementById("news-letteremail").value = null;
+            $("#newsletter-modal-onload").modal('hide');
+        }
+    }
+    function SignUpFailure(data) {
+        Alert.error(data, 'Error', { displayDuration: 3000 });
+    }
+</script>
+
+
+
+
+
+    
+    <footer class="footer footer-section-start skin-light-footer" id="footer-section">
+        
+    </footer>
+    <script src="Content/js/custom.js"></script>
+    <script src="Content/js/bootstrap.js"></script>
+    
+
+</body>
+
+
+<!-- Mirrored from www.holidaybazaar.co/sign-up by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Apr 2025 10:43:13 GMT -->
+</html>
